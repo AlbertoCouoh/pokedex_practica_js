@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icon_pokeball.png">
+    <title>Pokedex</title>
+</head>
+
+<body>
+    <div class="div-maxcontent">
+        <div class="div-logo">
+            <img class="img-logo" src="img/Pokémon_logo.svg.png" alt="">
+        </div>
+        <div class="div-form">
+            <input type="text" id="searchPoke" name="searchPoke" placeholder="Search by Name or ID"><br>
+            <div class="div-warn" id="div-warn">
+            </div>
+            <input onclick="fetchPokemon()" type="submit" value="Buscar" class="btn-search"><br>
+        </div>
+        <div class="idv-contelement">
+            <div class="div-img">
+                <img id="poke-img" src="img/icon_pokeball.png" alt="pokeball">
+                <h4 class="h4-name" id="namepokem"></h4>
+            </div>
+        </div>
+        <div class="div-data">
+            <div class="div-datos" id="cont-data">
+                <h4 class="h4-title" id="pktype">Tipo: ____</h4>
+                <label class="h4-title" for="hpval" id="hp">HP: </label>
+                <progress id="hpval" max="255" value="0"></progress><br>
+                <label class="h4-title" for="attackval" id="attack">Attack: </label>
+                <progress id="attackval" max="255" value="0"></progress>
+            </div>
+        </div>
+        <div class="poke-dexcont">
+            <div class="contenedor" id="container">
+
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="js/script.js"></script>
+</footer>
+
+</html>
