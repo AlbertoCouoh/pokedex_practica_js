@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/icon_pokeball.png">
+    <link rel="shortcut icon" href="img/shorticon_pokeball.png">
     <title>Pokedex</title>
 </head>
 
@@ -16,7 +16,8 @@
             <img class="img-logo" src="img/Pokémon_logo.svg.png" alt="">
         </div>
         <div class="div-form">
-            <input type="text" id="searchPoke" name="searchPoke" placeholder="Search by Name or ID"><br>
+            <h4 class="h4-title2" id="title_info">SEARCH A POKEMON BY NAME OR ID</h4>
+            <input type="text" id="searchPoke" name="searchPoke" placeholder="Charmander"><br>
             <div class="div-warn" id="div-warn">
             </div>
             <input onclick="fetchPokemon()" type="submit" value="Buscar" class="btn-search"><br>
@@ -29,11 +30,16 @@
         </div>
         <div class="div-data">
             <div class="div-datos" id="cont-data">
-                <h4 class="h4-title" id="pktype">Tipo: ____</h4>
+                <h4 class="h4-title2" id="title_info">POKEMON INFO.</h4>
+                <h4 class="h4-title" id="pktype">TYPE: ____</h4><br>
                 <label class="h4-title" for="hpval" id="hp">HP: </label>
                 <progress id="hpval" max="255" value="0"></progress><br>
-                <label class="h4-title" for="attackval" id="attack">Attack: </label>
-                <progress id="attackval" max="255" value="0"></progress>
+                <label class="h4-title" for="attackval" id="attack">ATK: </label>
+                <progress id="attackval" max="255" value="0"></progress><br>
+                <label class="h4-title" for="defval" id="def">DEF: </label>
+                <progress id="defval" max="255" value="0"></progress><br>
+                <label class="h4-title" for="spattv" id="spatt">SP.ATK: </label>
+                <progress id="speattv" max="255" value="0"></progress><br>
             </div>
         </div>
         <div class="poke-dexcont">

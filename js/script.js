@@ -120,15 +120,36 @@ const typePokemn = (url) => {
 //get Hp
 const getHp = (url) => {
     const pokehp = document.getElementById("hpval");
+    const chp = document.getElementById("hp");
     let hpvalue = url[0].base_stat;
+    chp.textContent = "HP: "+ hpvalue +" ";
     pokehp.value = hpvalue;
 };
 
 //get Attack
 const getAttack = (url) => {
     const pokeattack = document.getElementById("attackval");
+    const attackv = document.getElementById("attack");
     let pokeatt = url[1].base_stat;
+    attackv.textContent = "ATK: "+ pokeatt +" ";
     pokeattack.value = pokeatt;
+};
+
+//get Defense
+const getDefense = (url) => {
+    const pokedef = document.getElementById("defval");
+    const def = document.getElementById("def");
+    let defval = url[2].base_stat;
+    def.textContent = "DEF: "+ defval +" ";
+    pokedef.value = defval;
+};
+//get SpAttack
+const getSpAttack = (url) => {
+    const spatkv = document.getElementById("speattv");
+    const spatk = document.getElementById("spatt");
+    let spatkval = url[3].base_stat;
+    spatk.textContent = "SP.ATK: "+ spatkval +" ";
+    spatkv.value = spatkval;
 };
 
 
@@ -155,11 +176,16 @@ const getInfoPoke = (pokemonid) =>{
             namePokemn(poke_Name);
 
             let tipePoke = data.types;
+            console.log(tipePoke);
             typePokemn(tipePoke);
 
-            let hpPoke = data.stats;
-            getHp(hpPoke);
+            let pokestats = data.stats;
+            getHp(pokestats);
 
-            getAttack(hpPoke);
+            getAttack(pokestats);
+
+            getDefense(pokestats);
+
+            getSpAttack(pokestats);
         })
 }
