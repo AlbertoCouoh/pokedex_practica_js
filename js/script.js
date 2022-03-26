@@ -2,6 +2,7 @@
 const contenedor = document.getElementById('container');
 const contwarn = document.getElementById('div-warn');
 const contData = document.getElementById('cont-data');
+const contMov = document.getElementById('cont-mov');
 //get pokemons
 const getPokeList = () => {
     let maxi = 10;
@@ -92,9 +93,13 @@ const pokeImage = (url) => {
 };
 
 //Get Name Pokemon
-const namePokemn = (url) => {
+const namePokemn = (url,id) => {
     const pokeNa = document.getElementById("namepokem");
-    pokeNa.textContent = url;
+    const tagname1 = document.getElementById("title_info");
+    const tagname2 = document.getElementById("mov_info");
+    pokeNa.textContent = id + " " +url;
+    tagname1.textContent = url.toUpperCase() + " INFO";
+    tagname2.textContent = url.toUpperCase() + " MOV";
 };
 
 //get Type Pokemon
@@ -110,10 +115,10 @@ const typePokemn = (url) => {
             console.log(tipos);
         }
         const typos = tipos.substring(0, tipos.length - 2);
-        pokeNa.textContent = "Tipo: " + typos;
+        pokeNa.textContent = "TYPE: " + typos;
     } else {
         tipos = url[0].type.name;
-        pokeNa.textContent = "Tipo: " + tipos;
+        pokeNa.textContent = "TYPE: " + tipos;
     }
 
 };
@@ -151,8 +156,46 @@ const getSpAttack = (url) => {
     spatk.textContent = "SP.ATK: "+ spatkval +" ";
     spatkv.value = spatkval;
 };
+//get SpDefence
+const getSpDefence = (url) => {
+    const spdefv = document.getElementById("spdefv");
+    const spdef = document.getElementById("spdef");
+    let spdefval = url[4].base_stat;
+    spdef.textContent = "SP.DEF: "+ spdefval +" ";
+    spdefv.value = spdefval;
+};
 
+//get Speed
+const getSpeed = (url) => {
+    const speedp = document.getElementById("speedv");
+    const speedt = document.getElementById("speed");
+    let speedval = url[5].base_stat;
+    speedt.textContent = "SPEED: "+ speedval +" ";
+    speedp.value = speedval;
+};
+//-----
+//get mov
+const getMovList = (url) => {
+    let maxi = url.length;
 
+    for (let i = maxi - 1; i => 0; i--) {
+        const divmv = document.createElement('div');
+        divmv.classList.add('item-mv');
+        divmv.id = "mv-"+i.toString();
+        contMov.prepend(divmv);
+
+        const divmvc = document.getElementById("mv-"+i.toString());
+        const textp = document.createElement('p');
+        textp.classList.add('p1-style');
+        textp.id = 'p1-' + i.toString();
+        textp.textContent = url[i].move.name;
+        divmvc.prepend(textp);
+        if (i == 0) {
+            break;
+        }
+    }
+};
+//---
 const selectTarjet = () => {
     console.log('click');
 };
@@ -173,10 +216,10 @@ const getInfoPoke = (pokemonid) =>{
             pokeImage(pokeImg);
 
             let poke_Name = data.name;
-            namePokemn(poke_Name);
+            let poke_id = data.id;
+            namePokemn(poke_Name,poke_id);
 
             let tipePoke = data.types;
-            console.log(tipePoke);
             typePokemn(tipePoke);
 
             let pokestats = data.stats;
@@ -187,5 +230,12 @@ const getInfoPoke = (pokemonid) =>{
             getDefense(pokestats);
 
             getSpAttack(pokestats);
+
+            getSpDefence(pokestats);
+
+            getSpeed(pokestats);
+
+            let movespkm = data.moves;
+            getMovList(movespkm);
         })
 }

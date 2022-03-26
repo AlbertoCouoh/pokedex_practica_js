@@ -16,8 +16,8 @@
             <img class="img-logo" src="img/Pokémon_logo.svg.png" alt="">
         </div>
         <div class="div-form">
-            <h4 class="h4-title2" id="title_info">SEARCH A POKEMON BY NAME OR ID</h4>
-            <input type="text" id="searchPoke" name="searchPoke" placeholder="Charmander"><br>
+            <h4 class="h4-title2" id="title_help">SEARCH A POKEMON</h4>
+            <input type="text" id="searchPoke" name="searchPoke" placeholder="Name or ID"><br>
             <div class="div-warn" id="div-warn">
             </div>
             <input onclick="fetchPokemon()" type="submit" value="Buscar" class="btn-search"><br>
@@ -30,7 +30,7 @@
         </div>
         <div class="div-data">
             <div class="div-datos" id="cont-data">
-                <h4 class="h4-title2" id="title_info">POKEMON INFO.</h4>
+                <h4 class="h4-title2" id="title_info">POKEMON INFO</h4>
                 <h4 class="h4-title" id="pktype">TYPE: ____</h4><br>
                 <label class="h4-title" for="hpval" id="hp">HP: </label>
                 <progress id="hpval" max="255" value="0"></progress><br>
@@ -40,14 +40,22 @@
                 <progress id="defval" max="255" value="0"></progress><br>
                 <label class="h4-title" for="spattv" id="spatt">SP.ATK: </label>
                 <progress id="speattv" max="255" value="0"></progress><br>
+                <label class="h4-title" for="spdefv" id="spdef">SP.DEF: </label>
+                <progress id="spdefv" max="255" value="0"></progress><br>
+                <label class="h4-title" for="spdefv" id="speed">SPEED: </label>
+                <progress id="speedv" max="255" value="0"></progress><br>
             </div>
         </div>
-        <div class="poke-dexcont">
-            <div class="contenedor" id="container">
+        <div class="div-datamv">
+            <h4 class="h4-title2" id="mov_info">POKEMON MOV</h4>
+            <div class="div-mov" id="cont-mov">
+            </div>
+            <div class="poke-dexcont">
+                <div class="contenedor" id="container">
 
+                </div>
             </div>
         </div>
-    </div>
 </body>
 <footer>
     <script src="js/script.js"></script>

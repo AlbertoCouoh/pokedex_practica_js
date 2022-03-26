@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "Press Start 2P";
   src: url(../fonts/PressStart2P-Regular.ttf);
@@ -8,7 +7,7 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   background-color: #dc143c;
   width: auto;
@@ -74,12 +73,64 @@
 .div-data {
   margin-top: 10px;
   border-radius: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
   background-color: #112e29;
-  width: auto 280px;
-  height: max-content 200px;
-  padding: 10px;
+  width: auto;
+  height: max-content;
+  padding: 20px;
+  max-width: fit-content;
+  min-width: 300px;
+}
+.div-datamv {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #112e29;
+  width: auto;
+  height: max-content;
+  padding: 20px;
+  max-width: fit-content;
+  min-width: 300px;
+}
+.div-mov {
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #59ab62;
+  width: 260px;
+  height: 200px;
+  padding: 20px;
+  max-width: fit-content;
+  min-width: 200px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.item-mv{
+  border-radius: 10px;
+  width: 250px;
+  height: 40px;
+  background-color: #185378;
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.p1-style{
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
 }
 .div-title {
   align-items: center;
@@ -169,7 +220,7 @@
 }
 progress {
   -webkit-appearance: none;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 #hpval::-webkit-progress-value {
@@ -181,15 +232,26 @@ progress {
   border-radius: 6px;
 }
 #defval::-webkit-progress-value {
-    background-color: #32CD32;
-    border-radius: 6px;
-  }
+  background-color: #32cd32;
+  border-radius: 6px;
+}
 ::-webkit-progress-bar {
   border-radius: 6px;
   background-color: #ffffff;
 }
 
 #speattv::-webkit-progress-value {
-    background-color: #8A2BE2;
+  background-color: #8a2be2;
+  border-radius: 6px;
+}
+#spdefv::-webkit-progress-value {
+    background-color: #C71585;
     border-radius: 6px;
+  }
+  #speedv::-webkit-progress-value {
+    background-color: #20B2AA;
+    border-radius: 6px;
+  }
+  label{
+      text-align: center;
   }
